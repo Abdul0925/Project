@@ -17,7 +17,6 @@ switch ($method) {
         break;
         case "POST":
         $user = json_decode(file_get_contents('php://input'));
-        // Assuming you have some user validation here
         $sql = "SELECT * FROM users WHERE username = :username AND password = :password";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':username', $user->username);
@@ -32,7 +31,7 @@ switch ($method) {
                 'status' => 1,
                 'message' => 'User exists.',
                 'token' => $token,
-                'user' => $result  // Including user data if necessary
+                'user' => $result 
             ];
         } else {
             $response = [
@@ -41,7 +40,6 @@ switch ($method) {
             ];
         }
         
-        // Return a single JSON object
         echo json_encode($response);
         break;
 }
