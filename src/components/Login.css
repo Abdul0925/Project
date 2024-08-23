@@ -55,9 +55,15 @@
     background-color: #0056b3;
   }
   
-  p {
-    /* text-align: center; */
-    margin: 2rem;
+
+  .login-para{
+
+      text-align: center;
+      margin: 2rem;
+      color: #333333;
+    }
+    p {
+      margin: 2rem;
     
     color: #333333;
   }

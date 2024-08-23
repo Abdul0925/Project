@@ -56,7 +56,7 @@ function Login() {
       </form>
       
     </div>
-      <p>
+      <p className="login-para">
         Dont have an account, <Link to="/register">Register Now</Link>{" "}
       </p>
           </>
