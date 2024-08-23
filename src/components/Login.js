@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [inputs, setInputs] = useState({});
-    const location = useLocation();
-    
+  const [inputs, setInputs] = useState({});
+
   const Navigate = useNavigate();
-  
-  
-
-
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -28,7 +21,7 @@ function Login() {
       .then(function (response) {
         console.log("Hello");
         console.log("Status:", response.data.status);
-        localStorage.setItem('token', response.data.token);
+        localStorage.setItem("token", response.data.token);
         if (response.data.status === 1) {
           Navigate("/home", {
             state: { username: response.data.user.username },
@@ -46,18 +39,14 @@ function Login() {
         <input
           type="text"
           placeholder="Username"
-          // value={username}
           name="username"
           onChange={handleChange}
-          // onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
           placeholder="Password"
-          // value={password}
           name="password"
           onChange={handleChange}
-          // onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
       </form>
