@@ -39,9 +39,14 @@ function Home() {
         console.log("Hello");
         console.log("Status:", response.data.status);
       });
+      getPost();
     alert("Post Published successfully");
   };
 
+
+  function handleDelete(){
+
+  }
   return (
     <>
       {username ? (
@@ -49,7 +54,7 @@ function Home() {
           <div>
             <Link to="/">Logut</Link>
             <h2>Home</h2>
-            <p>Welcome {username}! You can perform CRUD operations here.</p>
+            <p>Welcome {username}!</p>
           </div>
           <div>
             <form onSubmit={handleSubmit}>
@@ -78,12 +83,12 @@ function Home() {
             posts
               .filter((post) => post.username === username) // Filter posts based on username
               .map((post) => (
-                <div key={post.id}>
-                    <h1>{username}</h1>
+                <div key={post.id} className="post-container">
+                    
                   <h3>{post.title}</h3>
                   <p>{post.description}</p>
                   <button>Update</button>
-                  <button>Delete</button>
+                  <button onClick={handleDelete}>Delete</button>
                 </div>
               ))
           ) : (

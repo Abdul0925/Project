@@ -56,8 +56,9 @@
   }
   
   p {
-    text-align: center;
-    margin-top: 10px;
+    /* text-align: center; */
+    margin: 2rem;
+    
     color: #333333;
   }
   
