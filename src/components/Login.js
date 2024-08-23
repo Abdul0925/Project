@@ -19,8 +19,9 @@ function Login() {
     axios
       .post("http://localhost/my-web-app/login.php", inputs)
       .then(function (response) {
+       
         console.log("Hello");
-        console.log("Status:", response.data.status);
+        console.log("Status:", response.data);
         localStorage.setItem("token", response.data.token);
         if (response.data.status === 1) {
           Navigate("/home", {

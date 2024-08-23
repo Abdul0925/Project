@@ -8,10 +8,16 @@ $conn = $objDb->connect();
 
 $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
-    case "POST":
-        $user = json_decode(file_get_contents('php://input'));
+    case "GET":
 
-    
+        $stmt = $conn->prepare("SELECT * FROM blogs");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($result);
+        break;
+        case "POST":
+        $user = json_decode(file_get_contents('php://input'));
+        // Assuming you have some user validation here
         $sql = "SELECT * FROM users WHERE username = :username AND password = :password";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':username', $user->username);
@@ -26,7 +32,7 @@ switch ($method) {
                 'status' => 1,
                 'message' => 'User exists.',
                 'token' => $token,
-                'user' => $result  
+                'user' => $result  // Including user data if necessary
             ];
         } else {
             $response = [
@@ -35,7 +41,7 @@ switch ($method) {
             ];
         }
         
-       
+        // Return a single JSON object
         echo json_encode($response);
         break;
 }
