@@ -3,3 +3,36 @@
     height: 5rem;
     border: 1px solid black;
 }
+
+.titleInput{
+    width: 70%;
+    padding: 0.5rem;
+    margin: 10px;
+    display: block;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.descriptionInput{
+    width: 70%;
+    padding: 0.5rem;
+    margin: 10px;
+    display: block;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  
+}
+
+
+.addButton{
+    width: 10%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

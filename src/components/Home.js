@@ -42,18 +42,20 @@ function Home() {
                 type="text"
                 placeholder="Enter Title"
                 onChange={handleChange}
+                className="titleInput"
               />
               <input
                 name="description"
                 type="text"
                 placeholder="Enter Desciption"
                 onChange={handleChange}
+                className="descriptionInput"
               />
 
-              <button>Add Notes</button>
+              <button className="addButton">Add Notes</button>
             </form>
           </div>
-          <div className="list"></div>
+          <div className=""></div>
         </div>
       ) : (
         <div>Please login</div>

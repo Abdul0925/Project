@@ -26,36 +26,41 @@ function Register() {
   };
 
   return (
-    <>
-      <form onSubmit={handleRegister}>
+    <div className="registerpage">
+
+      <form onSubmit={handleRegister} className="registerform">
         <h2>Register</h2>
         <input
           type="text"
           placeholder="Username"
           name="username"
           onChange={handleChange}
+          className="usernameInput"
         />
         <input
           type="email"
           placeholder="Email"
           name="email"
           onChange={handleChange}
+          className="emailInput"
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
           onChange={handleChange}
+          className="passwordInput"
         />
         <input
           type="password"
           placeholder="Confirm Password"
           value={cpassword}
+          className="passwordInput"
           onChange={(e) => setCPassword(e.target.value)}
         />
-        <button type="submit">Register</button>
+        <button type="submit" className="registerButton">Register</button>
       </form>
-    </>
+    </div>
   );
 }
 
